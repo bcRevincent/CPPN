@@ -1,0 +1,38 @@
+
+
+log_dir: '../log/AWA2.log'
+dataset_root: '../dataset'
+dataset_name: 'AWA2'
+writer_path: '../runs/AWA2'
+device: 'cuda:0'
+k_cluster: 3
+backbone: resnet101
+epoch: 100
+
+anchor: False
+dist_injection: True
+pred_mode: 'fusion'
+wo_ref: 'False'
+
+lambda_cls_loss: 1.0
+lambda_inter_loss: 0.3
+lambda_intra_loss: 1.0
+lambda_project_loss: 0.5
+
+train_batch_size: 128
+test_batch_size: 1024
+temperature: 0.005
+manual_seed: 888
+
+optimizer: 'RMSProp'
+momentum: 0.05
+weight_decay: 0.00001
+lr: 0.0001
+swa_lr: 0.000001
+swa_annealing_epoch: 50
+scale: 30.0
+
+
+visual_feat_num: 2048
+semantic_feat_num: 85
+trans_feat_num: 2048

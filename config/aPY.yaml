@@ -1,0 +1,37 @@
+
+
+log_dir: '../log/aPY.log'
+dataset_root: '../dataset'
+dataset_name: 'aPY'
+writer_path: '../runs/aPY'
+device: 'cuda:0'
+k_cluster: 3
+backbone: resnet101
+epoch: 100
+
+anchor: False
+dist_injection: True
+pred_mode: 'fusion'
+wo_ref: 'False'
+
+lambda_cls_loss: 1.0
+lambda_inter_loss: 0.1
+lambda_intra_loss: 1.0
+lambda_project_loss: 0.9
+
+train_batch_size: 32
+test_batch_size: 1024
+temperature: 0.0005
+manual_seed: 888
+
+optimizer: 'RMSProp'
+momentum: 0.05
+weight_decay: 0.01
+lr: 0.0001
+swa_lr: 0.00001
+swa_annealing_epoch: 20
+scale: 100.0
+
+visual_feat_num: 2048
+semantic_feat_num: 64
+trans_feat_num: 2048
